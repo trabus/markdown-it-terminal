@@ -1,0 +1,29 @@
+{
+  "name": "markdown-it-terminal",
+  "version": "0.0.1",
+  "description": "Plugin for markdown-it to parse and output markdown formatted for the terminal",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/trabus/markdown-it-terminal"
+  },
+  "keywords": [
+    "markdown",
+    "markdown-it",
+    "terminal",
+    "chalk",
+    "cardinal"
+  ],
+  "author": "Jake Bixby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trabus/markdown-it-terminal/issues"
+  },
+  "homepage": "https://github.com/trabus/markdown-it-terminal",
+  "dependencies": {
+    "markdown-it": "^3.1.0"
+  }
+}
