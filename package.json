@@ -4,7 +4,7 @@
   "description": "Plugin for markdown-it to parse and output markdown formatted for the terminal",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "./node_modules/.bin/mocha tests/test"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,13 @@
   },
   "homepage": "https://github.com/trabus/markdown-it-terminal",
   "dependencies": {
+    "cardinal": "^0.5.0",
+    "chalk": "^1.0.0",
+    "lodash-node": "^3.4.0",
     "markdown-it": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.0"
   }
 }
