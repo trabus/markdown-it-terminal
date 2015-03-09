@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/trabus/markdown-it-terminal",
   "dependencies": {
+    "ansi-styles": "^2.0.1",
     "cardinal": "^0.5.0",
-    "chalk": "^1.0.0",
     "lodash-node": "^3.4.0",
     "markdown-it": "^3.1.0"
   },

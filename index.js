@@ -1,27 +1,30 @@
-var md       = require('markdown-it');
-var terminal = require('./lib/markdown-it-terminal');
-var extend   = require('lodash-node/modern/object/extend');
-var chalk    = require('chalk');
+var md            = require('markdown-it');
+var terminal      = require('./lib/markdown-it-terminal');
+var extend        = require('lodash-node/modern/object/extend');
+var styles        = require('ansi-styles');
+var compoundStyle = require('./lib/utils').compoundStyle;
 
 module.exports = function terminal_plugin(md,options) {
   var defaultOptions = {
-    code: chalk.yellow,
-    blockquote: chalk.gray.italic,
-    html: chalk.gray,
-    heading: chalk.green.bold,
-    firstHeading: chalk.magenta.underline.bold,
-    hr: chalk.reset,
-    listitem: chalk.reset,
-    table: chalk.reset,
-    paragraph: chalk.reset,
-    strong: chalk.bold,
-    em: chalk.italic,
-    codespan: chalk.yellow,
-    del: chalk.dim.gray.strikethrough,
-    link: chalk.blue,
-    href: chalk.blue.underline
+    code: styles.yellow,
+    blockquote: compoundStyle(['gray','italic']),
+    html: styles.gray,
+    heading: compoundStyle(['green','bold']),
+    firstHeading: compoundStyle(['magenta','underline','bold']),
+    hr: styles.reset,
+    listitem: styles.reset,
+    table: styles.reset,
+    paragraph: styles.reset,
+    strong: styles.bold,
+    em: styles.italic,
+    codespan: styles.yellow,
+    del: compoundStyle(['dim','gray','strikethrough']),
+    link: styles.blue,
+    href: compoundStyle(['blue','underline']),
+    unescape: true
   };
 
   var opts = extend(defaultOptions, options);
   terminal(md,opts);
+  // console.log(styles)
 };
