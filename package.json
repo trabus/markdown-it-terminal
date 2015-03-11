@@ -26,6 +26,7 @@
   "dependencies": {
     "ansi-styles": "^2.0.1",
     "cardinal": "^0.5.0",
+    "cli-table": "^0.3.1",
     "lodash-node": "^3.4.0",
     "markdown-it": "^3.1.0"
   },
