@@ -1,4 +1,4 @@
-var md            = require('markdown-it');
+// var md            = require('markdown-it');
 var terminal      = require('./lib/markdown-it-terminal');
 var extend        = require('lodash-node/modern/object/extend');
 var styles        = require('ansi-styles');
