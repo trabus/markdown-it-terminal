@@ -1,6 +1,6 @@
 // var md            = require('markdown-it');
 var terminal      = require('./lib/markdown-it-terminal');
-var extend        = require('lodash-node/modern/object/extend');
+var merge         = require('lodash-node/modern/object/merge');
 var styles        = require('ansi-styles');
 var compoundStyle = require('./lib/utils').compoundStyle;
 
@@ -24,7 +24,7 @@ module.exports = function terminal_plugin(md,options) {
     unescape: true
   };
 
-  var opts = extend(defaultOptions, options);
+  var opts = merge(defaultOptions, options);
   terminal(md,opts);
   // console.log(styles)
 };

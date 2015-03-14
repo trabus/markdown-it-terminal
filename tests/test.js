@@ -1,6 +1,6 @@
 'use strict';
 
-
+var styles = require('ansi-styles');
 var path     = require('path');
 var expect   = require('chai').expect;
 
@@ -104,6 +104,13 @@ describe('markdown-it-terminal', function () {
       ' \u001b[37mblah\u001b[39m\u001b[90m;\u001b[39m\n\u001b[94mfunction\u001b[39m \u001b[37m'+
       'bar\u001b[39m\u001b[90m(\u001b[39m\u001b[90m)\u001b[39m \u001b[33m{\u001b[39m\n   \u001b[31m'+
       'return\u001b[39m \u001b[92m"bar"\u001b[39m\u001b[90m;\u001b[39m\n\u001b[33m}\u001b[39m\n\u001b[39m\n\n');
+  });
+  
+  it('allows overrides of basic styles', function() {
+    var markdown = require('markdown-it')().use(require('../'),{code:styles.green});
+    // console.log(markdown.render('`code should be green`'))
+    expect(markdown.render('`code should be green`'))
+      .to.equal('\u001b[0m\u001b[32mcode should be green\u001b[39m\u001b[0m\n\n');
   });
   
   it.skip('renders blue', function(){   
