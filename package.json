@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-terminal",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Plugin for markdown-it to parse and output markdown formatted for the terminal",
   "main": "index.js",
   "scripts": {
