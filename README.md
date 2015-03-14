@@ -1,5 +1,6 @@
 markdown-it-terminal
 ===
+[![Build Status](https://travis-ci.org/trabus/markdown-it-terminal.svg)](https://travis-ci.org/trabus/markdown-it-terminal)
 
 This is a plugin to provide ansi terminal output for markdown-it. It is heavily inspired by [marked-terminal](https://github.com/mikaelbr/marked-terminal), a terminal renderer for the marked library.
 
