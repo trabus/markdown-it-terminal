@@ -2,25 +2,26 @@
 var terminal      = require('./lib/markdown-it-terminal');
 var merge         = require('lodash-node/modern/object/merge');
 var styles        = require('ansi-styles');
-var compoundStyle = require('./lib/utils').compoundStyle;
 
 module.exports = function terminal_plugin(md,options) {
   var defaultOptions = {
-    code: styles.yellow,
-    blockquote: compoundStyle(['gray','italic']),
-    html: styles.gray,
-    heading: compoundStyle(['green','bold']),
-    firstHeading: compoundStyle(['magenta','underline','bold']),
-    hr: styles.reset,
-    listitem: styles.reset,
-    table: styles.reset,
-    paragraph: styles.reset,
-    strong: styles.bold,
-    em: styles.italic,
-    codespan: styles.yellow,
-    del: compoundStyle(['dim','gray','strikethrough']),
-    link: styles.blue,
-    href: compoundStyle(['blue','underline']),
+    styleOptions: {
+      code: styles.yellow,
+      blockquote: terminal.compoundStyle(['gray','italic']),
+      html: styles.gray,
+      heading: terminal.compoundStyle(['green','bold']),
+      firstHeading: terminal.compoundStyle(['magenta','underline','bold']),
+      hr: styles.reset,
+      listitem: styles.reset,
+      table: styles.reset,
+      paragraph: styles.reset,
+      strong: styles.bold,
+      em: styles.italic,
+      codespan: styles.yellow,
+      del: terminal.compoundStyle(['dim','gray','strikethrough']),
+      link: styles.blue,
+      href: terminal.compoundStyle(['blue','underline'])
+    },
     unescape: true
   };
 

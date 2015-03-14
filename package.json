@@ -14,8 +14,8 @@
     "markdown",
     "markdown-it",
     "terminal",
-    "chalk",
-    "cardinal"
+    "cardinal",
+    "markdown-to-terminal"
   ],
   "author": "Jake Bixby",
   "license": "MIT",

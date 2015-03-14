@@ -107,7 +107,7 @@ describe('markdown-it-terminal', function () {
   });
   
   it('allows overrides of basic styles', function() {
-    var markdown = require('markdown-it')().use(require('../'),{code:styles.green});
+    var markdown = require('markdown-it')().use(require('../'),{styleOptions:{code:styles.green}});
     // console.log(markdown.render('`code should be green`'))
     expect(markdown.render('`code should be green`'))
       .to.equal('\u001b[0m\u001b[32mcode should be green\u001b[39m\u001b[0m\n\n');
