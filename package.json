@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/trabus/markdown-it-terminal",
   "dependencies": {
-    "ansi-styles": "^2.0.1",
+    "ansi-styles": "^2.1.0",
     "cardinal": "^0.5.0",
     "cli-table": "^0.3.1",
     "lodash.merge": "^3.3.2",
