@@ -28,7 +28,7 @@
     "cardinal": "^0.5.0",
     "cli-table": "^0.3.1",
     "lodash.merge": "^3.3.2",
-    "markdown-it": "^4.0.0"
+    "markdown-it": "^4.4.0"
   },
   "devDependencies": {
     "chai": "^2.3.0",
