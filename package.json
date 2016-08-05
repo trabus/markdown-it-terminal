@@ -3,6 +3,10 @@
   "version": "0.0.3",
   "description": "Plugin for markdown-it to parse and output markdown formatted for the terminal",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/test"
   },
