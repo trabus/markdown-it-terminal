@@ -31,7 +31,7 @@
     "ansi-styles": "^3.0.0",
     "cardinal": "^1.0.0",
     "cli-table": "^0.3.1",
-    "lodash.merge": "^4.6.0",
+    "lodash.merge": "^4.6.2",
     "markdown-it": "^8.3.1"
   },
   "devDependencies": {
