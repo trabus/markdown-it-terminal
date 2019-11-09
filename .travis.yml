@@ -3,9 +3,9 @@ sudo: required
 dist: trusty
 
 node_js:
-  - "4"
   - "6"
-  - "7"
+  - "8"
+  - "12"
 
 # https://yarnpkg.com/en/docs/install-ci#travis-tab
 sudo: required
