@@ -106,6 +106,14 @@ describe('markdown-it-terminal', function () {
     expect(markdown.render('`code should be green`'))
       .to.equal('\u001b[0m\u001b[32mcode should be green\u001b[39m\u001b[0m\n\n');
   });
+
+  it('renders indents', function() {
+    var markdown = require('markdown-it')().use(require('../'), { indent: '  ' });
+    
+    expect(markdown.render('# h1\nfoo\n## h2\nbar\n#\nbaz'))
+      .to.equal('\u001b[35m\u001b[4m\u001b[1m\nh1\u001b[22m\u001b[24m\u001b[39m\n  \u001b[0mfoo\u001b[0m\n\n' +
+      '  \u001b[32m\u001b[1m\n  h2\u001b[22m\u001b[39m\n    \u001b[0mbar\u001b[0m\n\n  \u001b[0mbaz\u001b[0m\n\n  ');
+  });
   
   it.skip('renders blue', function(){   
     console.log(md.render('<blue>content is blue and <red>this should be red</red> but this is blue</blue>'))  
