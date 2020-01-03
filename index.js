@@ -25,7 +25,7 @@ module.exports = function terminal_plugin(md,options) {
     unescape: true
   };
 
-  var opts = merge(defaultOptions, options);
+  var opts = merge({}, defaultOptions, options);
   terminal(md,opts);
   // console.log(styles)
 };
