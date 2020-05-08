@@ -41,7 +41,8 @@ markdown.use(terminal, options);
 var options = {
   styleOptions:{},
   highlight: require('cardinal').highlight,
-  unescape: true
+  unescape: true,
+  indent: '  '
 }
 ```
 
@@ -93,6 +94,13 @@ Highlight function to parse code blocks. Should be a function that takes a strin
 
 ### unescape
 Unescape content, `true` by default.
+
+### indent
+Indent all content under a heading (`h1`..`h6`) using this string.  With `indent: '  '` (two spaces):
+
+| Markdown                   | Rendered                      |
+| -------------------------- | ----------------------------- |
+| <pre># Heading 1<br>## Heading 2<br>Some stuff indented twice<br>#<br>Only indented once</pre> | <pre>Heading 1<br>  Heading 2<br>    Some stuff indented twice<br><br>  Only indented once</pre> |
 
 ## Highlighting
 `markdown-it-terminal` uses the [cardinal](https://github.com/thlorenz/cardinal) library 

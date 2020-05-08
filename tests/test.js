@@ -1,15 +1,17 @@
 'use strict';
 
-var styles = require('ansi-styles');
-var path     = require('path');
-var expect   = require('chai').expect;
+var styles     = require('ansi-styles');
+var MarkdownIt = require('markdown-it');
+var terminal   = require('../');
+var path       = require('path');
+var expect     = require('chai').expect;
 
 /*eslint-env mocha*/
 
 describe('markdown-it-terminal', function () {
   var md;
   beforeEach(function () {
-    md = require('markdown-it')().use(require('../'));
+    md = require('markdown-it')().use(terminal);
   });
   
   it('renders basic markdown', function() {
@@ -101,10 +103,28 @@ describe('markdown-it-terminal', function () {
   });
   
   it('allows overrides of basic styles', function() {
-    var markdown = require('markdown-it')().use(require('../'),{styleOptions:{code:styles.green}});
-    // console.log(markdown.render('`code should be green`'))
+    var markdown = new MarkdownIt().use(terminal,{styleOptions:{codespan:styles.green}});
     expect(markdown.render('`code should be green`'))
       .to.equal('\u001b[0m\u001b[32mcode should be green\u001b[39m\u001b[0m\n\n');
+  });
+
+  it('does not clobber default options', function() {
+    var markdown = new MarkdownIt().use(terminal,{styleOptions:{strong:styles.red}});
+    expect(markdown.render('**should be red**'))
+      .to.equal('\u001b[0m\u001b[31mshould be red\u001b[39m\u001b[0m\n\n');
+
+
+    var markdown2 = new MarkdownIt().use(terminal);
+    expect(markdown2.render('**should be default style**'))
+      .to.equal('\u001b[0m\u001b[1mshould be default style\u001b[22m\u001b[0m\n\n');
+  });
+
+  it('renders indents', function() {
+    var markdown = new MarkdownIt().use(terminal, { indent: '  ' });
+    
+    expect(markdown.render('# h1\nfoo\n## h2\nbar\n#\nbaz'))
+      .to.equal('\u001b[35m\u001b[4m\u001b[1m\nh1\u001b[22m\u001b[24m\u001b[39m\n  \u001b[0mfoo\u001b[0m\n\n' +
+      '  \u001b[32m\u001b[1m\n  h2\u001b[22m\u001b[39m\n    \u001b[0mbar\u001b[0m\n\n  \u001b[0mbaz\u001b[0m\n\n  ');
   });
   
   it.skip('renders blue', function(){   
