@@ -31,11 +31,14 @@
     "ansi-styles": "^3.0.0",
     "cardinal": "^1.0.0",
     "cli-table": "^0.3.1",
-    "lodash.merge": "^4.6.2",
-    "markdown-it": "^12.3.2"
+    "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "markdown-it": "^13.0.1",
     "mocha": "^7.1.2"
+  },
+  "peerDependencies": {
+    "markdown-it": ">= 13.0.0"
   }
 }
