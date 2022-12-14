@@ -1,4 +1,3 @@
-// var md            = require('markdown-it');
 var terminal      = require('./lib/markdown-it-terminal');
 var merge         = require('lodash.merge');
 var styles        = require('ansi-styles');
