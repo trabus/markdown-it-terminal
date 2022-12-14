@@ -36,7 +36,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "markdown-it": "^13.0.1",
-    "mocha": "^7.1.2"
+    "mocha": "^10.2.0"
   },
   "peerDependencies": {
     "markdown-it": ">= 13.0.0"
